@@ -1,0 +1,22 @@
+<div ng-controller="postulantesController">
+
+	nombre:<input type="text" ng-model="postulante.nombre"><br> 
+	codigo:<input type="text" ng-model="postulante.codigo"> <br>
+
+
+	<table>
+		<tr>
+			<td>Nombre</td>
+			<td>codigo</td>
+			<td>edit</td>
+			<td>del</td>
+		</tr>
+		<tr ng-repeat="d in postulantes">
+			<td>{{d.nombre}}</td>
+			<td>{{d.codigo}}</td>
+			<td><a href="" ng-click="select(d)">Edit</a></td>
+			<td><a href="" ng-click="delete(d)">X</a></td>
+		</tr>
+	</table>
+	<button ng-click="save()">Save</button>
+</div>

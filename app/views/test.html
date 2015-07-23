@@ -1,0 +1,16 @@
+<div ng-controller="crudController">
+		<input type="text" ng-model="nombre"> {{ nombre }}
+
+		<table>
+			<tr>
+				<td>Nombre</td>
+				<td>Año</td>
+			</tr>
+			<tr ng-repeat="d in cursos | filter: nombre">
+				<td>{{d.nombre}}</td>
+				<td>{{d.ano}}</td>
+			</tr>
+		</table>
+
+		<a href="#" ng-click="saludo()">saludar</a>
+	</div>
