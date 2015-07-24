@@ -1,4 +1,10 @@
-app.controller("postulantesController",function ($scope, $window, postulantesService){
+app.controller("postulantesController",function ($scope, $window, postulantesService, modalidadesService){
+
+	modalidadesService.list().then(function (r) {
+        $scope.modalidades = r.data;
+    }, function (error) {
+        console.log(error.data.message);
+    });
 
 	$scope.postulantes=[];
 	

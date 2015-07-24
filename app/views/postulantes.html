@@ -2,21 +2,29 @@
 
 	nombre:<input type="text" ng-model="postulante.nombre"><br> 
 	codigo:<input type="text" ng-model="postulante.codigo"> <br>
+	modalidad:<input type="text" ng-model="postulante.modalidadxid"> <br>
+	Mod:
+	<select ng-model="postulante.modalidad.id"
+	ng-options="value.id as value.nombre for value in modalidades">
+	<option>--</option>
+</select>{{postulante.modalidad.id}}
 
 
-	<table>
-		<tr>
-			<td>Nombre</td>
-			<td>codigo</td>
-			<td>edit</td>
-			<td>del</td>
-		</tr>
-		<tr ng-repeat="d in postulantes">
-			<td>{{d.nombre}}</td>
-			<td>{{d.codigo}}</td>
-			<td><a href="" ng-click="select(d)">Edit</a></td>
-			<td><a href="" ng-click="delete(d)">X</a></td>
-		</tr>
-	</table>
-	<button ng-click="save()">Save</button>
+<table>
+	<tr>
+		<td>Nombre</td>
+		<td>codigo</td>
+		<td>modalidad</td>
+		<td>edit</td>
+		<td>del</td>
+	</tr>
+	<tr ng-repeat="d in postulantes">
+		<td>{{d.nombre}}</td>
+		<td>{{d.codigo}}</td>
+		<td>{{d.modalidad.nombre}}</td>
+		<td><a href="" ng-click="select(d)">Edit</a></td>
+		<td><a href="" ng-click="delete(d)">X</a></td>
+	</tr>
+</table>
+<button ng-click="save()">Save</button>
 </div>
